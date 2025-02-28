@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             dgwProducts = new DataGridView();
-            colName = new DataGridViewTextBoxColumn();
-            colCategory = new DataGridViewTextBoxColumn();
-            colPrice = new DataGridViewTextBoxColumn();
             txtSearchproduct = new TextBox();
             comboBox1 = new ComboBox();
             label1 = new Label();
@@ -60,37 +57,12 @@
             // dgwProducts
             // 
             dgwProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgwProducts.Columns.AddRange(new DataGridViewColumn[] { colName, colCategory, colPrice });
             dgwProducts.Location = new Point(6, 21);
             dgwProducts.Margin = new Padding(2, 1, 2, 1);
             dgwProducts.Name = "dgwProducts";
             dgwProducts.RowHeadersWidth = 82;
             dgwProducts.Size = new Size(478, 259);
             dgwProducts.TabIndex = 0;
-            // 
-            // colName
-            // 
-            colName.HeaderText = "Product Name";
-            colName.MinimumWidth = 10;
-            colName.Name = "colName";
-            colName.Resizable = DataGridViewTriState.True;
-            colName.Width = 400;
-            // 
-            // colCategory
-            // 
-            colCategory.HeaderText = "Category";
-            colCategory.MinimumWidth = 10;
-            colCategory.Name = "colCategory";
-            colCategory.Resizable = DataGridViewTriState.True;
-            colCategory.SortMode = DataGridViewColumnSortMode.NotSortable;
-            colCategory.Width = 200;
-            // 
-            // colPrice
-            // 
-            colPrice.HeaderText = "Price";
-            colPrice.MinimumWidth = 10;
-            colPrice.Name = "colPrice";
-            colPrice.Width = 200;
             // 
             // txtSearchproduct
             // 
@@ -349,9 +321,6 @@
         private Button button2;
         private Button button3;
         private Button button5;
-        private DataGridViewTextBoxColumn colName;
-        private DataGridViewTextBoxColumn colCategory;
-        private DataGridViewTextBoxColumn colPrice;
         private TextBox txtPrice;
     }
 }

@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             button1 = new Button();
             button2 = new Button();
             dataGridView1 = new DataGridView();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
             dgwCancel = new DataGridViewTextBoxColumn();
             dgwProductName = new DataGridViewTextBoxColumn();
             Column1 = new DataGridViewComboBoxColumn();
             dgwUnitPrice = new DataGridViewTextBoxColumn();
             dgwAmount = new DataGridViewTextBoxColumn();
             dgwDate = new DataGridViewTextBoxColumn();
+            button3 = new Button();
+            button4 = new Button();
+            button5 = new Button();
             dataGridView2 = new DataGridView();
             button6 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -65,6 +65,7 @@
             button2.TabIndex = 5;
             button2.Text = "Startes";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // dataGridView1
             // 
@@ -75,6 +76,54 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(755, 158);
             dataGridView1.TabIndex = 6;
+            // 
+            // dgwCancel
+            // 
+            dgwCancel.HeaderText = "İptal";
+            dgwCancel.MinimumWidth = 6;
+            dgwCancel.Name = "dgwCancel";
+            dgwCancel.Width = 50;
+            // 
+            // dgwProductName
+            // 
+            dgwProductName.HeaderText = "Ürün Adı";
+            dgwProductName.MinimumWidth = 6;
+            dgwProductName.Name = "dgwProductName";
+            dgwProductName.Width = 125;
+            // 
+            // Column1
+            // 
+            dataGridViewCellStyle1.Format = "N0";
+            dataGridViewCellStyle1.NullValue = "0";
+            Column1.DefaultCellStyle = dataGridViewCellStyle1;
+            Column1.HeaderText = "Miktar";
+            Column1.Items.AddRange(new object[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" });
+            Column1.MinimumWidth = 8;
+            Column1.Name = "Column1";
+            Column1.Width = 150;
+            // 
+            // dgwUnitPrice
+            // 
+            dataGridViewCellStyle2.NullValue = "0";
+            dgwUnitPrice.DefaultCellStyle = dataGridViewCellStyle2;
+            dgwUnitPrice.HeaderText = "Fiyat";
+            dgwUnitPrice.MinimumWidth = 6;
+            dgwUnitPrice.Name = "dgwUnitPrice";
+            dgwUnitPrice.Width = 125;
+            // 
+            // dgwAmount
+            // 
+            dgwAmount.HeaderText = "Tutar";
+            dgwAmount.MinimumWidth = 6;
+            dgwAmount.Name = "dgwAmount";
+            dgwAmount.Width = 125;
+            // 
+            // dgwDate
+            // 
+            dgwDate.HeaderText = "ShippDate";
+            dgwDate.MinimumWidth = 6;
+            dgwDate.Name = "dgwDate";
+            dgwDate.Width = 125;
             // 
             // button3
             // 
@@ -103,54 +152,6 @@
             button5.Text = "Sipariş Kaydet";
             button5.UseVisualStyleBackColor = true;
             // 
-            // dgwCancel
-            // 
-            dgwCancel.HeaderText = "İptal";
-            dgwCancel.MinimumWidth = 6;
-            dgwCancel.Name = "dgwCancel";
-            dgwCancel.Width = 50;
-            // 
-            // dgwProductName
-            // 
-            dgwProductName.HeaderText = "Ürün Adı";
-            dgwProductName.MinimumWidth = 6;
-            dgwProductName.Name = "dgwProductName";
-            dgwProductName.Width = 125;
-            // 
-            // Column1
-            // 
-            dataGridViewCellStyle11.Format = "N0";
-            dataGridViewCellStyle11.NullValue = "0";
-            Column1.DefaultCellStyle = dataGridViewCellStyle11;
-            Column1.HeaderText = "Miktar";
-            Column1.Items.AddRange(new object[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" });
-            Column1.MinimumWidth = 8;
-            Column1.Name = "Column1";
-            Column1.Width = 150;
-            // 
-            // dgwUnitPrice
-            // 
-            dataGridViewCellStyle12.NullValue = "0";
-            dgwUnitPrice.DefaultCellStyle = dataGridViewCellStyle12;
-            dgwUnitPrice.HeaderText = "Fiyat";
-            dgwUnitPrice.MinimumWidth = 6;
-            dgwUnitPrice.Name = "dgwUnitPrice";
-            dgwUnitPrice.Width = 125;
-            // 
-            // dgwAmount
-            // 
-            dgwAmount.HeaderText = "Tutar";
-            dgwAmount.MinimumWidth = 6;
-            dgwAmount.Name = "dgwAmount";
-            dgwAmount.Width = 125;
-            // 
-            // dgwDate
-            // 
-            dgwDate.HeaderText = "ShippDate";
-            dgwDate.MinimumWidth = 6;
-            dgwDate.Name = "dgwDate";
-            dgwDate.Width = 125;
-            // 
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -169,7 +170,7 @@
             button6.Text = "Yeni Sipariş";
             button6.UseVisualStyleBackColor = true;
             // 
-            // OrderScreen
+            // OrderForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -182,7 +183,7 @@
             Controls.Add(dataGridView1);
             Controls.Add(button2);
             Controls.Add(button1);
-            Name = "OrderScreen";
+            Name = "OrderForm";
             Text = "OrderScreen";
             Load += OrderScreen_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

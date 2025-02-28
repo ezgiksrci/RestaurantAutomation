@@ -21,5 +21,31 @@ namespace RestaurantAutomation.UI.Forms
         {
 
         }
+
+        private void btnTable_Click(object sender, EventArgs e)
+        {
+            TableForm tableForm = new();
+            this.Hide();
+            tableForm.Show();
+        }
+
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            OrderForm orderForm = new();
+            this.Hide();
+            orderForm.Show();
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            MenuForm menuForm = new();
+            this.Hide();
+            menuForm.Show();
+        }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

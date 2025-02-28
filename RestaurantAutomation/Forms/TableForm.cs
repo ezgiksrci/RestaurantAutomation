@@ -13,7 +13,7 @@
                 b.Name = "btn_" + i;
                 b.Size = new Size(100, 100);
 
-                if (i%2 == 0)
+                if (i % 2 == 0)
                 {
                     b.BackColor = Color.GreenYellow;
                 }
@@ -23,6 +23,13 @@
                 }
                 flowLayoutPanel1.Controls.Add(b);
             }
+        }
+
+        private void btnMainMenu_Click(object sender, EventArgs e)
+        {
+            MainForm mainForm = new();
+            mainForm.Show();
+            this.Hide();
         }
     }
 }

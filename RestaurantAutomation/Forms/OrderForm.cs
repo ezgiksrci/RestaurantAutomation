@@ -51,7 +51,7 @@ namespace RestaurantAutomation.UI.Forms
         private void ShowProductsInCategory(string category)
         {
             List<Urun> urunler = VeriKaynagindanUrunleriGetir(category);
-            
+
 
             // Yeni form oluştur
             Form urunlerForm = new Form();
@@ -77,7 +77,7 @@ namespace RestaurantAutomation.UI.Forms
                 btnUrun.Click += (sender, e) =>
                 {
                     // Ürünü sepete ekle
-                    dataGridView1.Rows.Add(false, urun.UrunAdi,1, urun.Fiyat, urun.Fiyat, DateTime.Now, "");
+                    dataGridView1.Rows.Add(" ", urun.UrunAdi, "1", urun.Fiyat, urun.Fiyat, DateTime.Now);
 
                     // İsterseniz bir bildirim göster
                     MessageBox.Show(urun.UrunAdi + " siparişe eklendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -135,6 +135,28 @@ namespace RestaurantAutomation.UI.Forms
             public int UrunID { get; set; }
             public string UrunAdi { get; set; }
             public decimal Fiyat { get; set; }
+
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex>=0)
+            { 
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this item?", "Delete Item", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    dataGridView1.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Red;                  
+                    dgwCancel.FlatStyle = FlatStyle.Flat;
+                    dataGridView1.CurrentCell.Style.BackColor= Color.Red;
+                    dataGridView1.Rows[e.RowIndex].Cells["dgwProductName"].Value = "Silindi";
+                    dataGridView1.Rows[e.RowIndex].Cells["Column1"].Value = "0";
+                }                  
+            }
         }
     }
 }

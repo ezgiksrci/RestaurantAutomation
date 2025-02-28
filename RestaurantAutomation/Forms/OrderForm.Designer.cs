@@ -33,7 +33,7 @@
             button1 = new Button();
             button2 = new Button();
             dataGridView1 = new DataGridView();
-            dgwCancel = new DataGridViewTextBoxColumn();
+            dgwCancel = new DataGridViewButtonColumn();
             dgwProductName = new DataGridViewTextBoxColumn();
             Column1 = new DataGridViewComboBoxColumn();
             dgwUnitPrice = new DataGridViewTextBoxColumn();
@@ -50,18 +50,20 @@
             // 
             // button1
             // 
-            button1.Location = new Point(799, 141);
+            button1.Location = new Point(813, 102);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(138, 70);
+            button1.Size = new Size(121, 52);
             button1.TabIndex = 4;
             button1.Text = "Main Courses";
             button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            button2.Location = new Point(799, 29);
+            button2.Location = new Point(813, 22);
+            button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
-            button2.Size = new Size(138, 70);
+            button2.Size = new Size(121, 52);
             button2.TabIndex = 5;
             button2.Text = "Startes";
             button2.UseVisualStyleBackColor = true;
@@ -71,17 +73,22 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { dgwCancel, dgwProductName, Column1, dgwUnitPrice, dgwAmount, dgwDate });
-            dataGridView1.Location = new Point(12, 29);
+            dataGridView1.Location = new Point(10, 22);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(755, 158);
+            dataGridView1.Size = new Size(752, 118);
             dataGridView1.TabIndex = 6;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick_1;
+            dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
             // 
             // dgwCancel
             // 
             dgwCancel.HeaderText = "İptal";
             dgwCancel.MinimumWidth = 6;
             dgwCancel.Name = "dgwCancel";
+            dgwCancel.Resizable = DataGridViewTriState.True;
+            dgwCancel.SortMode = DataGridViewColumnSortMode.Automatic;
             dgwCancel.Width = 50;
             // 
             // dgwProductName
@@ -127,27 +134,30 @@
             // 
             // button3
             // 
-            button3.Location = new Point(799, 365);
+            button3.Location = new Point(813, 265);
+            button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
-            button3.Size = new Size(138, 72);
+            button3.Size = new Size(121, 54);
             button3.TabIndex = 7;
             button3.Text = "Beverages";
             button3.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            button4.Location = new Point(799, 251);
+            button4.Location = new Point(813, 186);
+            button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
-            button4.Size = new Size(138, 72);
+            button4.Size = new Size(121, 54);
             button4.TabIndex = 7;
             button4.Text = "Desserts";
             button4.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
-            button5.Location = new Point(599, 206);
+            button5.Location = new Point(524, 154);
+            button5.Margin = new Padding(3, 2, 3, 2);
             button5.Name = "button5";
-            button5.Size = new Size(168, 39);
+            button5.Size = new Size(147, 29);
             button5.TabIndex = 8;
             button5.Text = "Sipariş Kaydet";
             button5.UseVisualStyleBackColor = true;
@@ -155,26 +165,28 @@
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(12, 265);
+            dataGridView2.Location = new Point(10, 199);
+            dataGridView2.Margin = new Padding(3, 2, 3, 2);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new Size(755, 172);
+            dataGridView2.Size = new Size(752, 129);
             dataGridView2.TabIndex = 9;
             // 
             // button6
             // 
-            button6.Location = new Point(12, 206);
+            button6.Location = new Point(10, 154);
+            button6.Margin = new Padding(3, 2, 3, 2);
             button6.Name = "button6";
-            button6.Size = new Size(168, 39);
+            button6.Size = new Size(147, 29);
             button6.TabIndex = 10;
             button6.Text = "Yeni Sipariş";
             button6.UseVisualStyleBackColor = true;
             // 
             // OrderForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(964, 459);
+            ClientSize = new Size(1015, 517);
             Controls.Add(button6);
             Controls.Add(dataGridView2);
             Controls.Add(button5);
@@ -183,6 +195,7 @@
             Controls.Add(dataGridView1);
             Controls.Add(button2);
             Controls.Add(button1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "OrderForm";
             Text = "OrderScreen";
             Load += OrderScreen_Load;
@@ -197,14 +210,14 @@
         private DataGridView dataGridView1;
         private Button button3;
         private Button button4;
-        private DataGridViewTextBoxColumn dgwCancel;
+        private Button button5;
+        private DataGridView dataGridView2;
+        private Button button6;
+        private DataGridViewButtonColumn dgwCancel;
         private DataGridViewTextBoxColumn dgwProductName;
         private DataGridViewComboBoxColumn Column1;
         private DataGridViewTextBoxColumn dgwUnitPrice;
         private DataGridViewTextBoxColumn dgwAmount;
         private DataGridViewTextBoxColumn dgwDate;
-        private Button button5;
-        private DataGridView dataGridView2;
-        private Button button6;
     }
 }
